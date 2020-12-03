@@ -1,0 +1,141 @@
+#:kivy 1.10.0
+
+<ThirdScreen>:
+    name: '_third_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 7
+            cols: 3
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.snacks_screen_selected()
+                Image:
+                    source: 'assets/buttons/SNACKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Widget:
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.drinks_screen_selected()
+                Image:
+                    source: 'assets/buttons/DRINKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.drinks_screen_selected()
+                Image:
+                    source: 'assets/buttons/HOTFOOD.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                
+
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '50px'
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: root.switch_screen('_screen_two_')
+                Image:
+                    source: 'assets/buttons/RETAIL-P.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('ciggs')
+                # on_release: root.switch_screen('_screen_two_')
+                Image:
+                    source: 'assets/buttons/CIGGS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('grizzly')
+                Image:
+                    source: 'assets/buttons/GRIZZLY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size 
+                pos: self.pos
+                on_press: app.root.add_to_total('lighters')
+                Image:
+                    source: 'assets/buttons/LIGHTER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('stokers')
+                Image:
+                    source: 'assets/buttons/STOKERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('chapstick')
+                Image:
+                    source: 'assets/buttons/CHAPSTICK.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('log')
+                Image:
+                    source: 'assets/buttons/LOG.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.reset_running_total()
+                Image:
+                    source: 'assets/buttons/receipt_button.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            
