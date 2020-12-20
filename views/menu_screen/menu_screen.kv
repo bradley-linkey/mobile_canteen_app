@@ -1,0 +1,68 @@
+#:kivy 1.10.0
+
+<MenuScreen>:
+    name: '_menu_screen_'
+
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 7
+            cols: 3
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.snacks_screen_selected()
+                Image:
+                    source: 'assets/buttons/SNACKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.routelogs_screen_selected()
+                Image:
+                    source: 'assets/buttons/ROUTELOGS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.drinks_screen_selected()
+                Image:
+                    source: 'assets/buttons/DRINKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.food_screen_selected()
+                Image:
+                    source: 'assets/buttons/HOTFOOD.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.retail_screen_selected()
+                Image:
+                    source: 'assets/buttons/RETAIL.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            

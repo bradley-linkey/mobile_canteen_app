@@ -1,0 +1,231 @@
+#:kivy 1.10.0
+
+<DrinksScreen>:
+    name: '_drinks_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 9
+            cols: 3
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '30px'
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('nesquick')
+                on_press: app.root.add_to_nesquick('nesquick')
+                Image:
+                    source: 'assets/buttons/NESQUICK.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('gatorade')
+                on_press: app.root.add_to_gatorade('gatorade')
+                Image:
+                    source: 'assets/buttons/GATORADE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size 
+                pos: self.pos
+                on_press: app.root.add_to_total('red bull')
+                on_press: app.root.add_to_red_bull('red bull')
+                Image:
+                    source: 'assets/buttons/REDBULL.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('monster')
+                on_press: app.root.add_to_monster('monster')
+                Image:
+                    source: 'assets/buttons/MONSTER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('brisk')
+                on_press: app.root.add_to_brisk('brisk')
+                Image:
+                    source: 'assets/buttons/BRISK.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('water')
+                on_press: app.root.add_to_water('water')
+                Image:
+                    source: 'assets/buttons/WATER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('soda')
+                on_press: app.root.add_to_soda('soda')
+                Image:
+                    source: 'assets/buttons/SODA.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('arizona')
+                on_press: app.root.add_to_arizona('arizona')
+                Image:
+                    source: 'assets/buttons/ARIZONA.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('v8')
+                on_press: app.root.add_to_v8('v8')
+                Image:
+                    source: 'assets/buttons/V8.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('langers')
+                on_press: app.root.add_to_langers('langers')
+                Image:
+                    source: 'assets/buttons/LANGERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('body armor')
+                on_press: app.root.add_to_body_armor('body armor')
+                Image:
+                    source: 'assets/buttons/BODYARMOR.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('star bucks')
+                on_press: app.root.add_to_star_bucks('star bucks')
+                Image:
+                    source: 'assets/buttons/STARBUCKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('raze')
+                on_press: app.root.add_to_raze('raze')
+                Image:
+                    source: 'assets/buttons/RAZE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('bang')
+                on_press: app.root.add_to_bang('bang')
+                Image:
+                    source: 'assets/buttons/BANG.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size 
+                pos: self.pos
+                on_press: app.root.add_to_total('electro life')
+                on_press: app.root.add_to_electro_life('electro life')
+                Image:
+                    source: 'assets/buttons/ELECTROLIFE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('coconut water')
+                on_press: app.root.add_to_coconut_water('coconut water')
+                Image:
+                    source: 'assets/buttons/COCONUTWATER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('5 hour')
+                on_press: app.root.add_to_five_hour('5 hour')
+                Image:
+                    source: 'assets/buttons/5HOUR.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.receipt_screen_selected()
+                Image:
+                    source: 'assets/buttons/receipt_button.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            

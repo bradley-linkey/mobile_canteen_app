@@ -1,0 +1,158 @@
+#:kivy 1.10.0
+
+<FoodScreen>:
+    name: '_food_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 7
+            cols: 3
+        
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y        
+
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '30px'
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('breakfast')
+                on_press: app.root.add_to_breakfast('breakfast')
+                Image:
+                    source: 'assets/buttons/BREAKFAST.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('small burrito')
+                on_press: app.root.add_to_small_burrito('small burrito')
+                Image:
+                    source: 'assets/buttons/SMALLBURRITO.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size 
+                pos: self.pos
+                on_press: app.root.add_to_total('large burrito')
+                on_press: app.root.add_to_large_burrito('large burrito')
+                Image:
+                    source: 'assets/buttons/LARGEBURRITO.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('calzone')
+                on_press: app.root.add_to_calzone('calzone')
+                Image:
+                    source: 'assets/buttons/CALZONE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('big chicken')
+                on_press: app.root.add_to_big_chicken('big chicken')
+                Image:
+                    source: 'assets/buttons/BIGCHICKEN.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('pbj')
+                on_press: app.root.add_to_pbj('pbj')
+                Image:
+                    source: 'assets/buttons/PB&J.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('BRATS')
+                on_press: app.root.add_to_brats('brats')
+                Image:
+                    source: 'assets/buttons/BRATS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('fresh & ready')
+                on_press: app.root.add_to_fresh_and_ready('fresh & ready')
+                Image:
+                    source: 'assets/buttons/FRESH&READY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('tuna')
+                on_press: app.root.add_to_tuna('tuna')
+                Image:
+                    source: 'assets/buttons/TUNA.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_total('parfait')
+                on_press: app.root.add_to_parfait('parfait')
+                Image:
+                    source: 'assets/buttons/PARFAIT.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.receipt_screen_selected()
+                Image:
+                    source: 'assets/buttons/receipt_button.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            
