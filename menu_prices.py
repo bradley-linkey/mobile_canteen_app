@@ -28,7 +28,7 @@ PRICES = {
     "bang" : 3,
     "electro life" : 4.75,
     "coconut water" : 3.5,
-    "5 hour" : 3.75,
+    "5 hour" : 3.25,
     "breakfast":3.75,
     "small burrito" : 3.25,
     "large burrito": 4,
