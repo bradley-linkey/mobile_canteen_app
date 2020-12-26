@@ -26,11 +26,15 @@
                     y: self.parent.y
             
             Label:
-                id: running_total
-                text: '$ --.-- '
-                pos: self.pos
+                background_color: 1, 1, 1, .01
                 size: self.size
-                font_size: '30px'
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/Retail_truck.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Widget:
             
             Button:
                 background_color: 1, 1, 1, .01
@@ -86,20 +90,18 @@
                     source: 'assets/buttons/CHAPSTICK.png'
                     x: self.parent.x
                     y: self.parent.y
-            
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('log')
-                
-                Image:
-                    source: 'assets/buttons/LOG.png'
-                    x: self.parent.x
-                    y: self.parent.y
 
             Widget:
 
+            Widget:
+            
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '30px'
+            
             Button:
                 background_color: 1, 1, 1, .01
                 size: self.size

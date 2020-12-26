@@ -10,6 +10,7 @@ PRICES = {
     "pop tarts" : 1.5,
     "takis" : 2.25,
     "fruit snacks" : 1.25,
+    "fruit cups" : 2.5,
     "gum": 1.25,
     "gatorade bar": 3,
     "nesquick": 3 , 
@@ -44,5 +45,4 @@ PRICES = {
     "stokers": 18,
     "lighters" : 2,
     "chapstick": 3.25,
-    "log": 30,
 }

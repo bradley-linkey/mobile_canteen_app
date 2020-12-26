@@ -15,10 +15,14 @@
             size_hint_y: 1
             rows: 7
             cols: 3
+            
             Button:
                 background_color: 1, 1, 1, .01
                 size: self.size
                 pos: self.pos
+                on_press: app.root.get_data()
+                on_press: app.root.DIR_screen_selected() 
+                on_release: app.root.trigger_send_email()
                 Image:
                     source: 'assets/buttons/ORDER.png'
                     x: self.parent.x
@@ -40,14 +44,3 @@
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
-
-            
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.reset_running_total()
-                Image:
-                    source: 'assets/buttons/COMFIRMTRANACTION.png'
-                    x: self.parent.x
-                    y: self.parent.y

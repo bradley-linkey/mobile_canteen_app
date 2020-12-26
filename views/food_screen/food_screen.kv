@@ -27,11 +27,15 @@
                     y: self.parent.y        
 
             Label:
-                id: running_total
-                text: '$ --.-- '
-                pos: self.pos
+                background_color: 1, 1, 1, .01
                 size: self.size
-                font_size: '30px'
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/Hot_food_truck.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Widget:
             
             Button:
                 background_color: 1, 1, 1, .01
@@ -143,7 +147,12 @@
                     x: self.parent.x
                     y: self.parent.y
 
-            Widget:
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '30px'
 
             Button:
                 background_color: 1, 1, 1, .01

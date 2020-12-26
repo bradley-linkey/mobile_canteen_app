@@ -13,11 +13,12 @@
         GridLayout:
             size_hint_x: 1
             size_hint_y: 1
-            rows: 13
-            cols: 4
+            rows: 10
+            cols: 5
 
             Button:
                 id: candy_count
+                name: 'candy'
                 text: ' '
                 pos: self.pos
                 size: self.size
@@ -103,6 +104,14 @@
                 size: self.size
                 font_size: '10px'
                 on_press: app.root.minus_to_fruit_snacks('fruit snacks')
+            
+            Button:
+                id: fruit_cups_count
+                text: ' '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+                on_press: app.root.minus_to_fruit_cups('fruit cup')
 
             Button:
                 id: gum_count
@@ -174,7 +183,7 @@
                 pos: self.pos
                 size: self.size
                 font_size: '10px'
-                on_press: app.root.minus_to_soda('sado')
+                on_press: app.root.minus_to_soda('soda')
 
             Button:
                 id: arizona_count
@@ -376,13 +385,6 @@
                 font_size: '10px'
                 on_press: app.root.minus_to_chapstick('chapstick')
 
-            Button:
-                id: log_count
-                text: ' '
-                pos: self.pos
-                size: self.size
-                font_size: '10px'
-                on_press: app.root.minus_to_log('log')
             
             Button:
                 background_color: 1, 1, 1, .01
@@ -393,6 +395,7 @@
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
                     y: self.parent.y              
+                    size: self.parent.size
 
             Label:
                 id: running_total
@@ -400,6 +403,9 @@
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
+
+            Widget:
+            
         
             Button:
                 background_color: 1, 1, 1, .01
@@ -410,6 +416,7 @@
                     source: 'assets/buttons/COMFIRMTRANACTION.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size: self.parent.size
             
 
             
