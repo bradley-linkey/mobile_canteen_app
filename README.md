@@ -10,7 +10,7 @@ activate the virtual environment
 
 ## Run the program
 
-`python app_with_kv.py --size=320x645 --dpi=90`
+`python main.py --size=320x645 --dpi=90`
 
 ## Push to GitHub
 

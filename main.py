@@ -14,6 +14,7 @@ Builder.load_file("views/food_screen/food_screen.kv")
 Builder.load_file("views/reciept_screen/reciept_screen.kv")
 Builder.load_file("views/screen_six/screen_six.kv")
 Builder.load_file("views/snacks_screen/snacks_screen.kv")
+Builder.load_file("views/start_count_screen/start_count_screen.kv")
  
 class MenuScreen(Screen):
     def __init__(self, **kwargs):
@@ -54,6 +55,12 @@ class SixthScreen(Screen):
 class SnacksScreen(Screen):
     def __init__(self, **kwargs):
         super(SnacksScreen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Start_Count_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Start_Count_Screen, self).__init__(**kwargs)
         self.app = App.get_running_app()
 
 
@@ -166,6 +173,8 @@ class MyScreenManager(ScreenManager):
         self.lighters_count = 0
         self.chapstick_count = 0
 
+        self.start_count_total = ""
+
     def get_data(self):
         totals = []
 
@@ -218,6 +227,10 @@ class MyScreenManager(ScreenManager):
         totals.append(self.chapstick_total)
 
         self.write_to_file(totals)
+
+        self.DIR_screen_selected()
+
+        self.trigger_send_email()
 
     def write_to_file(self, data):
         col_names = ['total_sold']
@@ -1084,7 +1097,6 @@ class MyScreenManager(ScreenManager):
             self.ids.reciept_screen.ids.ciggs_count.text = ' ciggs ' + str(self.ciggs_count) + ' = '+ str(self.ciggs_product)
             self.update_all_screen_totals()  
 
-
     def add_to_grizzly(self, button_name):
         self.grizzly_total += 1
         self.grizzly_count += 1
@@ -1185,7 +1197,10 @@ class MyScreenManager(ScreenManager):
     
     def DIR_screen_selected(self):
         self.app.root.switch_screen('_menu_screen_')
-
+    
+    def start_count_screen_selected(self):
+        self.app.root.switch_screen('_start_count_screen_')
+    
     def trigger_send_email(self):
         try:
             print('-- Sending Email --\n')

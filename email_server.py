@@ -14,6 +14,8 @@ class EmailServer:
 
 
     def send_email(cls):
+        print(f'Sending Email \n')
+
         subject = "An email with attachment from Python"
         body = "This is an email with attachment sent from Python"
         sender_email = "bradley.linkey@gmail.com"

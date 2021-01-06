@@ -21,8 +21,8 @@
                 size: self.size
                 pos: self.pos
                 on_press: app.root.get_data()
-                on_press: app.root.DIR_screen_selected() 
-                on_release: app.root.trigger_send_email()
+                # on_press: app.root.DIR_screen_selected()
+                # on_release: app.root.trigger_send_email()
                 Image:
                     source: 'assets/buttons/ORDER.png'
                     x: self.parent.x
@@ -36,7 +36,17 @@
                 Image:
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
-                    y: self.parent.y   
+                    y: self.parent.y  
+                    
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.start_count_screen_selected() 
+                Image:
+                    source: 'assets/buttons/start_count_button.png'
+                    x: self.parent.x
+                    y: self.parent.y
 
             Label:
                 id: running_total
