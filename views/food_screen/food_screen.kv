@@ -23,9 +23,15 @@
                 on_press: app.root.DIR_screen_selected()
                 Image:
                     source: 'assets/buttons/DIR.png'
-                    x: self.parent.x
-                    y: self.parent.y        
-
+                    # x: self.parent.x
+                    # y: self.parent.y
+                    pos: self.parent.pos
+                    allow_stretch: True
+                    keep_ratio: True
+                    size_hint_y: None
+                    size_hint_x: None
+                    width: self.parent.width
+                    height: self.parent.height
             Label:
                 background_color: 1, 1, 1, .01
                 size: self.size

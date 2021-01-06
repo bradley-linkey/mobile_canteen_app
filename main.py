@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.button import Button
 from kivy.lang import Builder
 from menu_prices import PRICES
 import csv
@@ -1323,6 +1324,9 @@ class SwitchingScreenApp(App):
     def build(self):
         return MyScreenManager()
 
+
+class ImageButton(Button):
+    pass
 
 if __name__ == "__main__":
     SwitchingScreenApp().run()

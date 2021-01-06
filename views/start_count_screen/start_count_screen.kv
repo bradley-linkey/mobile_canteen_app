@@ -4,6 +4,7 @@
     name: '_start_count_screen_'
 
     BoxLayout:
+        orientation: 'vertical'
         canvas.before:
             Color:
                 rgba: rgba('#72B7CD')
@@ -11,143 +12,52 @@
                 pos: self.pos
                 size: self.size
 
-        GridLayout:
+
+        Widget:
+            size_hint_y: .05
+
+        BoxLayout:
             size_hint_x: 1
-            size_hint_y: 1
-            rows: 7
-            cols: 3
-            
-            Widget: 
+            size_hint_y: .1
+
+            Button:
+                size_hint_x: 0.7
+                text: 'This is a dropdown'
+
+            TextInput:
+                size_hint_x: 0.3
+                text_hint: 'count'
+                font_size: '12dp'
+
+        Widget:
+            size_hint_y: .05
+
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: .5
 
             Label:
-                id: how_many
-                text: 'How many  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
+                text: 'This is a listview'
+                font_size: '12dp'
+                canvas.before:
+                    Color:
+                        rgba: rgba('#FFFFFF')
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
 
-            Widget:
+        Widget:
+            size_hint_y: .1
+            
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: .1
 
-            Label:
-                id: start_count_total
-                text: '  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
-
-            Widget:
-
-            Widget:
-
-            Widget:
-
-            Label:
-                id: do_you_have
-                text: 'do you have?  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
-
-            Widget:
+            Button:
+                text: 'Clear'
             
             Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/1.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/2.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/3.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/4.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/5.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/6.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/7.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/8.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/9.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            Widget:
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/0.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.DIR_screen_selected()
-                Image:
-                    source: 'assets/buttons/DIR.png'
-                    x: self.parent.x
-                    y: self.parent.y  
+                text: 'Submit'
+        
+        Widget:
+            size_hint_y: .1
