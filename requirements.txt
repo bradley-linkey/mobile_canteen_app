@@ -1,5 +1,6 @@
 certifi==2020.11.8
 chardet==3.0.4
+Cython==0.29.21
 docutils==0.16
 idna==2.10
 Kivy==1.11.1
