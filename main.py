@@ -5,6 +5,9 @@ from kivy.lang import Builder
 from menu_prices import PRICES
 import csv
 import threading
+from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.recycleview import RecycleView
 
 from email_server import EmailServer
 
@@ -60,9 +63,69 @@ class SnacksScreen(Screen):
 
 
 class Start_Count_Screen(Screen):
+    products_list = [
+        'Candy',
+        'Nesquick',
+        'Red Bull'
+    ]
     def __init__(self, **kwargs):
         super(Start_Count_Screen, self).__init__(**kwargs)
         self.app = App.get_running_app()
+        self.selected_product_list = []
+
+    def add_to_listview(self):
+        # scrape the data from the UI
+        selected_product = self.ids.product_dropdown.ids.btn.text
+        product_count = self.ids.product_count.text
+
+        # create the listview string
+        text_string = f'{selected_product}  -  {product_count}'
+        list_view_string = {"text": text_string}
+
+        # add the listview string to the listview string list
+        self.selected_product_list.append(list_view_string)
+
+        # update the UI listview
+        self.ids.product_listview.update_list_view(self.selected_product_list)
+
+    def clear_screen(self):
+        '''
+            Method to clear the screen and elements
+        '''
+
+        print(f'-- Clearing Screen --\n')
+
+        # clear the dropdown
+        product_dropdown = self.ids.product_dropdown
+        product_dropdown.set_button_text('Select Product')
+
+        # clear the textinput
+        text_input = self.ids.product_count
+        text_input.text = ''
+
+        # clear the listview
+        self.selected_product_list = []
+
+        # update the UI listview
+        self.ids.product_listview.update_list_view(self.selected_product_list)
+
+
+    def populate_dropdown(self):
+        print(f'Populating the dropdown \n')
+
+        dropdown = self.ids.product_dropdown.ids.dropdown
+        dropdown.clear_widgets()
+
+        for product in self.products_list:
+            button = Button(text=product, size_hint_y=None, size_hint_x=1, height="42dp")
+            button.bind(on_release=lambda product: self.product_dropdown_selected(dropdown, product))
+            dropdown.add_widget(button)
+
+    def product_dropdown_selected(self, dropdown, product):
+        self.selected_product = None
+
+        #  set the dropdown text
+        dropdown.select(product.text)
 
 
 class MyScreenManager(ScreenManager):
@@ -1200,6 +1263,7 @@ class MyScreenManager(ScreenManager):
         self.app.root.switch_screen('_menu_screen_')
     
     def start_count_screen_selected(self):
+        self.app.root.ids.start_count_screen.populate_dropdown()
         self.app.root.switch_screen('_start_count_screen_')
     
     def trigger_send_email(self):
@@ -1327,6 +1391,44 @@ class SwitchingScreenApp(App):
 
 class ImageButton(Button):
     pass
+
+
+class Item(BoxLayout, Label):
+    def __init__(self, **kwargs):
+        super(Item, self).__init__(**kwargs)
+
+class ProductListView(RecycleView):
+    def __init__(self, **kwargs):
+        super(ProductListView, self).__init__(**kwargs)
+        self.data = []
+
+    def update_list_view(self, new_product_list):
+        self.data = []
+        self.data = new_product_list
+
+class ProductDropdown(BoxLayout):
+    selected_product = None
+
+    def __init__(self, **kwargs):
+        super(ProductDropdown, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+    def set_button_text(self, text):
+        if self.ids.btn:
+            # set the button text
+            self.ids.btn.text = text
+        return
+
+    def select_program(self, text):
+
+        # save the progam locally
+        self.selected_product = text
+
+        # set the button text
+        self.set_button_text(text)
+
+    def get_selected_program(self):
+        return self.selected_product
 
 if __name__ == "__main__":
     SwitchingScreenApp().run()

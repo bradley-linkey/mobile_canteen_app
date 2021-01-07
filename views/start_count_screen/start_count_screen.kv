@@ -1,4 +1,6 @@
 #:kivy 1.10.0
+#:import mtx kivy.metrics
+
 
 <Start_Count_Screen>:
     name: '_start_count_screen_'
@@ -20,31 +22,40 @@
             size_hint_x: 1
             size_hint_y: .1
 
-            Button:
-                size_hint_x: 0.7
-                text: 'This is a dropdown'
+            ProductDropdown:
+                id: product_dropdown
+                size_hint_y: 0.75
+                on_parent: self.set_button_text('Select Product')
 
             TextInput:
+                id: product_count
                 size_hint_x: 0.3
+                padding: 20
                 text_hint: 'count'
                 font_size: '12dp'
 
         Widget:
             size_hint_y: .05
 
-        BoxLayout:
+        # BoxLayout:
+        #     size_hint_x: 1
+        #     size_hint_y: .5
+
+        ProductListView:
+            id: product_listview
             size_hint_x: 1
             size_hint_y: .5
-
-            Label:
-                text: 'This is a listview'
-                font_size: '12dp'
-                canvas.before:
-                    Color:
-                        rgba: rgba('#FFFFFF')
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+            canvas.before:
+                Color:
+                    rgba: rgba('#C4C4C4')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: rgba('#0E1574')
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
 
         Widget:
             size_hint_y: .1
@@ -52,12 +63,100 @@
         BoxLayout:
             size_hint_x: 1
             size_hint_y: .1
+            
+            Button:
+                text: 'Add'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.add_to_listview()
 
+                canvas.before:
+                    Color:
+                        rgba: rgba('#81d47b')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+            
             Button:
                 text: 'Clear'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.clear_screen()
+
+                canvas.before:
+                    Color:
+                        rgba: rgba('#bababa')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
             
             Button:
                 text: 'Submit'
+
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                canvas.before:
+                    Color:
+                        rgba: rgba('#3458eb')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
         
-        Widget:
+        BoxLayout:
             size_hint_y: .1
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y 
+
+
+<ProductDropdown>:
+    orientation: 'vertical'
+    padding: 20
+    dropdown: dropdown.__self__
+
+    Button:
+        id: btn
+        on_parent: dropdown.dismiss()
+        on_release: dropdown.open(self)
+        size_hint_y: None
+        height: mtx.sp(40)
+
+    DropDown:
+        id: dropdown
+        on_select: root.select_program(args[1])
+
+
+<Item>:
+    id: lineitem
+    color: (0,0,0,1)
+
+    canvas.before:
+        Color:
+            rgba: (0, 0, 1, .4)
+        Rectangle:
+            pos: self.pos
+            size: [self.size[0], 1]
+
+<ProductListView>:
+    viewclass: 'Item'
+    RecycleBoxLayout:
+        default_size: None, dp(28)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
