@@ -1,9 +1,13 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.button import Button
 from kivy.lang import Builder
 from menu_prices import PRICES
 import csv
 import threading
+from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.recycleview import RecycleView
 
 from email_server import EmailServer
 
@@ -59,9 +63,204 @@ class SnacksScreen(Screen):
 
 
 class Start_Count_Screen(Screen):
+    products_list = [
+        'candy',
+        'nesquick',
+        'red bull',
+        'gatorade',
+        'monster',
+        'brisk',
+        'water',
+        'soda',
+        'arizona',
+        'v8',
+        'langers',
+        'body armor',
+        'star bucks',
+        'raze',
+        'bang',
+        'electro life',
+        'coconut water',
+        '5 hour',
+        'breakfast',
+        'small burrito',
+        'large burrito',
+        'calzone',
+        'big chicken',
+        'pbj',
+        'brats',
+        'fresh and ready',
+        'tuna',
+        'parfait',
+        'pastry',
+        'chips',
+        'el sabroso',
+        'combos',
+        'soups',
+        'island snacks',
+        'sun flower seeds',
+        'pop tart',
+        'takis',
+        'fruit snacks',
+        'gum',
+        'gatorade bars',
+        'ciggs',
+        'grizzly',
+        'stokers',
+        'chapstick',
+    ]
     def __init__(self, **kwargs):
         super(Start_Count_Screen, self).__init__(**kwargs)
         self.app = App.get_running_app()
+        self.selected_product_list = []
+
+    def add_to_listview(self):
+        
+        # start of adding to the csv file
+
+        if self.selected_product == 'candy':
+            self.product_count = self.start_candy_count
+        elif self.selected_product == 'pastry':
+            self.product_count = self.start_pastry_count
+        elif self.selected_product == 'chips':
+            self.product_count = self.start_chips_count
+        elif self.selected_product == 'el sabroso':
+            self.product_count = self.start_el_sabroso_count
+        elif self.selected_product == 'combos':
+            self.product_count = self.start_combos_count
+        elif self.selected_product == 'soups':
+            self.product_count = self.start_soups_count
+        elif self.selected_product == 'island snacks':
+            self.product_count = self.start_island_snacks_count
+        elif self.selected_product == 'sun flower seeds':
+            self.product_count = self.start_sun_flower_seeds_count
+        elif self.selected_product == 'pop tarts':
+            self.product_count = self.start_pop_tarts_count
+        elif self.selected_product == 'takis':
+            self.product_count = self.start_takis_count
+        elif self.selected_product == 'fruit snacks':
+            self.product_count = self.start_fruit_snacks_count
+        elif self.selected_product == 'gum':
+            self.product_count = self.start_gum_count
+        elif self.selected_product == 'nesquick':
+            self.product_count = self.start_nesquick_count
+        elif self.selected_product == 'red bull':
+            self.product_count = self.start_red_bull_count
+        elif self.selected_product == 'gatorade':
+            self.product_count = self.start_gatorade_count
+        elif self.selected_product == 'monster':
+            self.product_count = self.start_monster_count
+        elif self.selected_product == 'brisk':
+            self.product_count = self.start_brisk_count
+        elif self.selected_product == 'water':
+            self.product_count = self.start_water_count
+        elif self.selected_product == 'soda':
+            self.product_count = self.start_soda_count
+        elif self.selected_product == 'arizona':
+            self.product_count = self.start_arizona_count
+        elif self.selected_product == 'v8':
+            self.product_count = self.start_v8_count
+        elif self.selected_product == 'v8':
+            self.product_count = self.start_v8_count
+        elif self.selected_product == 'langers':
+            self.product_count = self.start_langers_count
+        elif self.selected_product == 'body armor':
+            self.product_count = self.start_body_armor_count
+        elif self.selected_product == 'star bucks':
+            self.product_count = self.start_star_bucks_count
+        elif self.selected_product == 'raze':
+            self.product_count = self.start_raze_count
+        elif self.selected_product == 'electro life':
+            self.product_count = self.start_electro_life_count
+        elif self.selected_product == 'coconut water':
+            self.product_count = self.start_coconut_water_count
+        elif self.selected_product == '5 hour':
+            self.product_count = self.start_five_hour_count
+        elif self.selected_product == 'breakfast':
+            self.product_count = self.start_breakfast_count
+        elif self.selected_product == 'small_burrito':
+            self.product_count = self.start_small_burrito_count
+        elif self.selected_product == 'large_burrito':
+            self.product_count = self.start_large_burrito_count
+        elif self.selected_product == 'calzone':
+            self.product_count = self.start_calzone_count
+        elif self.selected_product == 'big chicken':
+            self.product_count = self.start_big_chicken_count
+        elif self.selected_product == 'pbj':
+            self.product_count = self.start_pbj_count
+        elif self.selected_product == 'brats':
+            self.product_count = self.start_brats_count
+        elif self.selected_product == 'fresh and ready':
+            self.product_count = self.start_fresh_and_ready_count
+        elif self.selected_product == 'tuna':
+            self.product_count = self.start_tuna_count
+        elif self.selected_product == 'parfait':
+            self.product_count = self.start_parfait_count
+        elif self.selected_product == 'ciggs':
+            self.product_count = self.start_ciggs_count
+        elif self.selected_product == 'grizzly':
+            self.product_count = self.start_grizzly_count
+        elif self.selected_product == 'stokers':
+            self.product_count = self.start_stokers_count
+        elif self.selected_product == 'lighters':
+            self.product_count = self.start_lighters_count
+        elif self.selected_product == 'chapstick':
+            self.product_count = self.start_chapstick_count
+        
+        # ending of adding to the csv file
+
+        # scrape the data from the UI
+        selected_product = self.ids.product_dropdown.ids.btn.text
+        product_count = self.ids.product_count.text
+
+        # create the listview string
+        text_string = f'{selected_product}  -  {product_count}'
+        list_view_string = {"text": text_string}
+
+        # add the listview string to the listview string list
+        self.selected_product_list.append(list_view_string)
+
+        # update the UI listview
+        self.ids.product_listview.update_list_view(self.selected_product_list)
+
+    def clear_screen(self):
+        '''
+            Method to clear the screen and elements
+        '''
+
+        print(f'-- Clearing Screen --\n')
+
+        # clear the dropdown
+        product_dropdown = self.ids.product_dropdown
+        product_dropdown.set_button_text('Select Product')
+
+        # clear the textinput
+        text_input = self.ids.product_count
+        text_input.text = ''
+
+        # clear the listview
+        self.selected_product_list = []
+
+        # update the UI listview
+        self.ids.product_listview.update_list_view(self.selected_product_list)
+
+
+    def populate_dropdown(self):
+        print(f'Populating the dropdown \n')
+
+        dropdown = self.ids.product_dropdown.ids.dropdown
+        dropdown.clear_widgets()
+
+        for product in self.products_list:
+            button = Button(text=product, size_hint_y=None, size_hint_x=1, height="42dp")
+            button.bind(on_release=lambda product: self.product_dropdown_selected(dropdown, product))
+            dropdown.add_widget(button)
+
+    def product_dropdown_selected(self, dropdown, product):
+        self.selected_product = None
+
+        #  set the dropdown text
+        dropdown.select(product.text)
 
 
 class MyScreenManager(ScreenManager):
@@ -173,58 +372,106 @@ class MyScreenManager(ScreenManager):
         self.lighters_count = 0
         self.chapstick_count = 0
 
+
+        self.start_candy_count = 0
+        self.start_pastry_count = 0
+        self.start_chips_count = 0
+        self.start_el_sabroso_count = 0
+        self.start_combos_count = 0
+        self.start_soups_count = 0
+        self.start_island_snacks_count = 0
+        self.start_sun_flower_seeds_count = 0
+        self.start_pop_tarts_count = 0
+        self.start_takis_count = 0
+        self.start_fruit_snacks_count = 0
+        self.start_fruit_cups_count = 0
+        self.start_gum_count = 0
+        self.start_gatorade_bar_count = 0
+        self.start_nesquick_count = 0
+        self.start_red_bull_count = 0
+        self.start_gatorade_count = 0
+        self.start_monster_count = 0
+        self.start_brisk_count = 0
+        self.start_water_count = 0
+        self.start_soda_count = 0
+        self.start_arizona_count = 0
+        self.start_v8_count = 0
+        self.start_langers_count = 0
+        self.start_body_armor_count = 0
+        self.start_star_bucks_count = 0
+        self.start_raze_count = 0
+        self.start_bang_count = 0
+        self.start_electro_life_count = 0
+        self.start_coconut_water_count = 0
+        self.start_five_hour_count = 0
+        self.start_breakfast_count = 0
+        self.start_small_burrito_count = 0
+        self.start_large_burrito_count = 0
+        self.start_calzone_count = 0
+        self.start_big_chicken_count = 0
+        self.start_pbj_count = 0
+        self.start_brats_count = 0
+        self.start_fresh_and_ready_count = 0
+        self.start_tuna_count = 0
+        self.start_parfait_count = 0
+        self.start_ciggs_count = 0
+        self.start_grizzly_count = 0
+        self.start_stokers_count = 0
+        self.start_lighters_count = 0
+        self.start_chapstick_count = 0
+
         self.start_count_total = ""
 
     def get_data(self):
-        totals = []
+        totals = ['start count' , 'amount sold']
 
         # TODO - do some stuff
-        totals.append(self.candy_total)
-        totals.append(self.pastry_total)
-        totals.append(self.chips_total)
-        totals.append(self.el_sabroso_total)
-        totals.append(self.combos_total)
-        totals.append(self.soups_total)
-        totals.append(self.island_snacks_total)
-        totals.append(self.sun_flower_seeds_total)
-        totals.append(self.pop_tarts_total)
-        totals.append(self.takis_total)
-        totals.append(self.fruit_snacks_total)
-        totals.append(self.fruit_cups_total) 
-        totals.append(self.gum_total)
-        totals.append(self.gatorade_bar_total) 
-        totals.append(self.nesquick_total) 
-        totals.append(self.red_bull_total)
-        totals.append(self.gatorade_total) 
-        totals.append(self.monster_total)
-        totals.append(self.brisk_total) 
-        totals.append(self.water_total) 
-        totals.append(self.soda_total) 
-        totals.append(self.arizona_total)
-        totals.append(self.v8_total)
-        totals.append(self.langers_total) 
-        totals.append(self.body_armor_total) 
-        totals.append(self.star_bucks_total) 
-        totals.append(self.raze_total)
-        totals.append(self.bang_total) 
-        totals.append(self.electro_life_total) 
-        totals.append(self.coconut_water_total) 
-        totals.append(self.five_hour_total) 
-        totals.append(self.breakfast_total) 
-        totals.append(self.small_burrito_total) 
-        totals.append(self.large_burrito_total)
-        totals.append(self.calzone_total) 
-        totals.append(self.big_chicken_total)
-        totals.append(self.pbj_total) 
-        totals.append(self.brats_total) 
-        totals.append(self.fresh_and_ready_total) 
-        totals.append(self.tuna_total) 
-        totals.append(self.parfait_total) 
-        totals.append(self.ciggs_total) 
-        totals.append(self.grizzly_total) 
-        totals.append(self.stokers_total) 
-        totals.append(self.lighters_total) 
-        totals.append(self.chapstick_total)
+        totals.append(self.start_candy_total ,self.candy_total)
+        totals.append(self.start_pastry_total ,self.pastry_total)
+        totals.append(self.start_chips_total ,self.chips_total)
+        totals.append(self.start_el_sabroso_total ,self.el_sabroso_total)
+        totals.append(self.start_combos_total ,self.combos_total)
+        totals.append(self.start_soups_total ,self.soups_total)
+        totals.append(self.start_islands_snacks_total ,self.island_snacks_total)
+        totals.append(self.start_sun_flower_seeds_total ,self.sun_flower_seeds_total)
+        totals.append(self.start_pop_tarts_total ,self.pop_tarts_total)
+        totals.append(self.start_takis__total ,self.takis_total)
+        totals.append(self.start_fruit_snacks_total ,self.fruit_snacks_total)
+        totals.append(self.start_fruit_cups_total ,self.fruit_cups_total) 
+        totals.append(self.start_gum_total ,self.gum_total)
+        totals.append(self.start_gatorade_bar_total ,self.gatorade_bar_total) 
+        totals.append(self.start_nesquick_total ,self.nesquick_total) 
+        totals.append(self.start_red_bull_total ,self.red_bull_total)
+        totals.append(self.start_garotade_total ,self.gatorade_total) 
+        totals.append(self.start_monster_total ,self.monster_total)
+        totals.append(self.start_brisk_total ,self.brisk_total) 
+        totals.append(self.start_water_total ,self.water_total) 
+        totals.append(self.start_soda_total ,self.soda_total) 
+        totals.append(self.start_arizona_total ,self.arizona_total)
+        totals.append(self.start_v8_total ,self.v8_total)
+        totals.append(self.start_langers_total ,self.langers_total) 
+        totals.append(self.start_body_armor_total ,self.body_armor_total) 
+        totals.append(self.start_star_bucks_total ,self.star_bucks_total) 
+        totals.append(self.start_raze__total ,self.raze_total)
+        totals.append(self.start_bang__total ,self.bang_total) 
+        totals.append(self.start_electro_life_total ,self.electro_life_total) 
+        totals.append(self.start_water_total ,self.coconut_water_total) 
+        totals.append(self.start_five_hour_total ,self.five_hour_total) 
+        totals.append(self.start_breakfast_total ,self.breakfast_total) 
+        totals.append(self.start_small_burrito_total ,self.small_burrito_total) 
+        totals.append(self.start_large_burrito_total ,self.large_burrito_total)
+        totals.append(self.start_calzone_total ,self.calzone_total) 
+        totals.append(self.start_big_chicken_total ,self.big_chicken_total)
+        totals.append(self.start_pbj_total ,self.pbj_total) 
+        totals.append(self.start_brats_total ,self.brats_total) 
+        totals.append(self.start_fresh_and_ready_total ,self.fresh_and_ready_total) 
+        totals.append(self.start_tuna_total ,self.tuna_total) 
+        totals.append(self.start_parafait_total ,self.parfait_total) 
+        totals.append(self.start_ciggs_total ,self.ciggs_total) 
+        totals.append(self.start_grizzly_total ,self.grizzly_total) 
+        totals.append(self.start_stokers_total ,self.stokers_total) 
+        totals.append(self.start_lighters_total ,self.lighters_total) 
+        totals.append(self.start_chapstick_total ,self.chapstick_total)
 
         self.write_to_file(totals)
 
@@ -233,55 +480,54 @@ class MyScreenManager(ScreenManager):
         self.trigger_send_email()
 
     def write_to_file(self, data):
-        col_names = ['total_sold']
-        candy_sold = [self.candy_total]
-        pastry_sold = [self.pastry_total]
-        chips_sold = [self.chips_total]
-        el_sabroso_sold = [self.el_sabroso_total]
-        combos_sold = [self.combos_total]
-        soups_sold = [self.soups_total]
-        island_snacks_sold = [self.island_snacks_total]
-        candy_sold = [self.candy_total]
-        sun_flower_seeds_sold = [self.sun_flower_seeds_total]
-        pop_tarts_sold = [self.pop_tarts_total]
-        takis_sold = [self.takis_total]
-        fruit_snacks_sold = [self.fruit_snacks_total]
-        fruit_cups_sold = [self.fruit_cups_total]
-        gum_sold = [self.gum_total]
-        gatorade_bar_sold = [self.gatorade_bar_total]
-        breakfast_sold = [self.breakfast_total]
-        small_burrito_sold = [self.small_burrito_total]
-        large_burrito_sold = [self.large_burrito_total]
-        calzone_sold = [self.calzone_total]
-        big_chicken_sold = [self.big_chicken_total]
-        pbj_sold = [self.pbj_total]
-        brats_sold = [self.brats_total]
-        fresh_and_ready_sold = [self.fresh_and_ready_total]
-        tuna_sold = [self.tuna_total]
-        parfait_sold = [self.parfait_total]
-        nesquick_sold = [self.nesquick_total]
-        red_bull_sold = [self.red_bull_total]
-        gatorade_sold = [self.gatorade_total]
-        monster_sold = [self.brisk_total]
-        brisk_sold = [self.brisk_total]
-        water_sold = [self.water_total]
-        soda_sold = [self.soda_total]
-        arizona_sold = [self.arizona_total]
-        v8_sold = [self.v8_total]
-        langers_sold = [self.langers_total]
-        body_armor_sold = [self.body_armor_total]
-        star_bucks_sold = [self.star_bucks_total]
-        raze_sold = [self.raze_total]
-        bang_sold = [self.bang_total]
-        electro_life_sold = [self.electro_life_total]
-        coconut_water_sold = [self.coconut_water_total]
-        five_hour_sold = [self.five_hour_total]
-
-        ciggs_sold = [self.ciggs_total]
-        grizzly_sold = [self.grizzly_total]
-        stokers_sold = [self.stokers_total]
-        lighters_sold = [self.lighters_total]
-        chapstick_sold = [self.chapstick_total]
+        col_names = ['Start_count' , 'Total_sold']
+        candy = [self.start_candy_count , self.candy_total]
+        pastry = [self.start_pastry_count , self.pastry_total]
+        chips = [self.start_chips_total , self.chips_total]
+        el_sabroso = [self.start_elsabroso_total , self.el_sabroso_total]
+        combos = [self.start_combos_total , self.combos_total]
+        soups = self.start_soups_total , [self.soups_total]
+        island_snacks = self.start_island_snacks_total , [self.island_snacks_total]
+        candy = [self.start_candy_total , self.candy_total]
+        sun_flower_seeds = [self.start_sun_flower_seeds_total , self.sun_flower_seeds_total]
+        pop_tarts = [self.start_pop_tarts_total , self.pop_tarts_total]
+        takis = [self.start_takis_total , self.takis_total]
+        fruit_snacks = [self.start_fruit_snacks_total , self.fruit_snacks_total]
+        fruit_cups = [self.start_fruit_cups_total , self.fruit_cups_total]
+        gum = [self.start_gum_total , self.gum_total]
+        gatorade_bar = [self.start_gatorade_bar_total , self.gatorade_bar_total]
+        breakfast = [self.start_breakfast_total , self.breakfast_total]
+        small_burrito = [self.start_small_burrito_total , self.small_burrito_total]
+        large_burrito = [self.start_large_burrito_total , self.large_burrito_total]
+        calzone = [self.start_calzone_total , self.calzone_total]
+        big_chicken = [self.start_big_chicken_total , self.big_chicken_total]
+        pbj = [self.start_pbj_total , self.pbj_total]
+        brats = [self.start_brats_total , self.brats_total]
+        fresh_and_ready = [self.start_fresh_and_ready_total , self.fresh_and_ready_total]
+        tuna = [self.start_tuna_total , self.tuna_total]
+        parfait = [self.start_parfait_total , self.parfait_total]
+        nesquick = [self.start_nesquick_total , self.nesquick_total]
+        red_bull = [self.start_red_bull_total , self.red_bull_total]
+        gatorade = [self.start_gatorade_total , self.gatorade_total]
+        monster = [self.start_monster_total , self.monster_total]
+        brisk = [self.start_brisk_total , self.brisk_total]
+        water = [self.start_water_total , self.water_total]
+        soda = [self.start_soda_total , self.soda_total]
+        arizona = [self.start_arizona_total , self.arizona_total]
+        v8 = [self.start_v8_total , self.v8_total]
+        langers = [self.start_langers_total , self.langers_total]
+        body_armor = [self.start_body_armor_total , self.body_armor_total]
+        star_bucks = [self.start_star_bucks_total , self.star_bucks_total]
+        raze = [self.start_raze_total , self.raze_total]
+        bang = [self.start_bang_total , self.bang_total]
+        electro_life = [self.start_electro_life_total , self.electro_life_total]
+        coconut_water = [self.start_cococunt_water_total , self.coconut_water_total]
+        five_hour = [self.start_five_hour_total , self.five_hour_total]
+        ciggs = [self.start_ciggs_total , self.ciggs_total]
+        grizzly = [self.start_grizzly_total , self.grizzly_total]
+        stokers = [self.start_stokers_total , self.stokers_total]
+        lighters = [self.start_lighters_total , self.lighters_total]
+        chapstick = [self.start_chapstick_total , self.chapstick_total]
         
         # name of csv file 
         filename = "my_total_sales.csv"
@@ -293,52 +539,52 @@ class MyScreenManager(ScreenManager):
 
             # writing the column names 
             csvwriter.writerow(col_names)
-            csvwriter.writerow(candy_sold)           
-            csvwriter.writerow(nesquick_sold) 
-            csvwriter.writerow(red_bull_sold) 
-            csvwriter.writerow(gatorade_sold) 
-            csvwriter.writerow(monster_sold) 
-            csvwriter.writerow(brisk_sold) 
-            csvwriter.writerow(water_sold) 
-            csvwriter.writerow(soda_sold )
-            csvwriter.writerow(arizona_sold )
-            csvwriter.writerow(v8_sold  )
-            csvwriter.writerow(langers_sold)
-            csvwriter.writerow(body_armor_sold )
-            csvwriter.writerow(star_bucks_sold )
-            csvwriter.writerow(raze_sold )
-            csvwriter.writerow(bang_sold )
-            csvwriter.writerow(electro_life_sold )
-            csvwriter.writerow(coconut_water_sold)
-            csvwriter.writerow(five_hour_sold )
-            csvwriter.writerow(breakfast_sold )
-            csvwriter.writerow(small_burrito_sold ) 
-            csvwriter.writerow(large_burrito_sold )
-            csvwriter.writerow(calzone_sold )
-            csvwriter.writerow(big_chicken_sold )
-            csvwriter.writerow(pbj_sold )
-            csvwriter.writerow(brats_sold)
-            csvwriter.writerow(fresh_and_ready_sold)
-            csvwriter.writerow(tuna_sold )
-            csvwriter.writerow(parfait_sold)
-            csvwriter.writerow(pastry_sold) 
-            csvwriter.writerow(chips_sold )
-            csvwriter.writerow(el_sabroso_sold)
-            csvwriter.writerow(combos_sold)
-            csvwriter.writerow(soups_sold) 
-            csvwriter.writerow(island_snacks_sold)
-            csvwriter.writerow(sun_flower_seeds_sold) 
-            csvwriter.writerow(pop_tarts_sold) 
-            csvwriter.writerow(takis_sold) 
-            csvwriter.writerow(fruit_snacks_sold) 
-            csvwriter.writerow(fruit_cups_sold) 
-            csvwriter.writerow(gum_sold) 
-            csvwriter.writerow(gatorade_bar_sold)
-            csvwriter.writerow(ciggs_sold )
-            csvwriter.writerow(grizzly_sold ) 
-            csvwriter.writerow(stokers_sold )
-            csvwriter.writerow(lighters_sold )
-            csvwriter.writerow(chapstick_sold ) 
+            csvwriter.writerow(candy)           
+            csvwriter.writerow(nesquick) 
+            csvwriter.writerow(red_bull) 
+            csvwriter.writerow(gatorade) 
+            csvwriter.writerow(monster) 
+            csvwriter.writerow(brisk) 
+            csvwriter.writerow(water) 
+            csvwriter.writerow(soda_)
+            csvwriter.writerow(arizona )
+            csvwriter.writerow(v8  )
+            csvwriter.writerow(langers)
+            csvwriter.writerow(body_armor )
+            csvwriter.writerow(star_bucks )
+            csvwriter.writerow(raze )
+            csvwriter.writerow(bang )
+            csvwriter.writerow(electro_life )
+            csvwriter.writerow(coconut_water)
+            csvwriter.writerow(five_hour )
+            csvwriter.writerow(breakfast )
+            csvwriter.writerow(small_burrito ) 
+            csvwriter.writerow(large_burrito )
+            csvwriter.writerow(calzone )
+            csvwriter.writerow(big_chicken )
+            csvwriter.writerow(pbj )
+            csvwriter.writerow(brats)
+            csvwriter.writerow(fresh_and_ready)
+            csvwriter.writerow(tuna)
+            csvwriter.writerow(parfait)
+            csvwriter.writerow(pastry) 
+            csvwriter.writerow(chips )
+            csvwriter.writerow(el_sabroso)
+            csvwriter.writerow(combos)
+            csvwriter.writerow(soups) 
+            csvwriter.writerow(island_snacks)
+            csvwriter.writerow(sun_flower_seeds) 
+            csvwriter.writerow(pop_tarts) 
+            csvwriter.writerow(takis) 
+            csvwriter.writerow(fruit_snacks) 
+            csvwriter.writerow(fruit_cups) 
+            csvwriter.writerow(gum)
+            csvwriter.writerow(gatorade_bar)
+            csvwriter.writerow(ciggs )
+            csvwriter.writerow(grizzly ) 
+            csvwriter.writerow(stokers )
+            csvwriter.writerow(lighters )
+            csvwriter.writerow(chapstick ) 
     
     def add_to_button(self, button):
         if button.name == 'candy':
@@ -1199,6 +1445,7 @@ class MyScreenManager(ScreenManager):
         self.app.root.switch_screen('_menu_screen_')
     
     def start_count_screen_selected(self):
+        self.app.root.ids.start_count_screen.populate_dropdown()
         self.app.root.switch_screen('_start_count_screen_')
     
     def trigger_send_email(self):
@@ -1323,6 +1570,47 @@ class SwitchingScreenApp(App):
     def build(self):
         return MyScreenManager()
 
+
+class ImageButton(Button):
+    pass
+
+
+class Item(BoxLayout, Label):
+    def __init__(self, **kwargs):
+        super(Item, self).__init__(**kwargs)
+
+class ProductListView(RecycleView):
+    def __init__(self, **kwargs):
+        super(ProductListView, self).__init__(**kwargs)
+        self.data = []
+
+    def update_list_view(self, new_product_list):
+        self.data = []
+        self.data = new_product_list
+
+class ProductDropdown(BoxLayout):
+    selected_product = None
+
+    def __init__(self, **kwargs):
+        super(ProductDropdown, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+    def set_button_text(self, text):
+        if self.ids.btn:
+            # set the button text
+            self.ids.btn.text = text
+        return
+
+    def select_program(self, text):
+
+        # save the progam locally
+        self.selected_product = text
+
+        # set the button text
+        self.set_button_text(text)
+
+    def get_selected_program(self):
+        return self.selected_product
 
 if __name__ == "__main__":
     SwitchingScreenApp().run()
