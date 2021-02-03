@@ -16,10 +16,7 @@
             size_hint_y: 1
             rows: 7
             cols: 3
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
+            ImageButton:
                 on_press: app.root.DIR_screen_selected()
                 Image:
                     source: 'assets/buttons/DIR.png'
@@ -37,153 +34,103 @@
             
             Widget:
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('candy')
-                on_press: app.root.add_to_candy('candy')
+            ImageButton:
+                on_press: app.root.add_to_item('candy')
                 Image:
                     source: 'assets/buttons/CANDY.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('pastry')
-                on_press: app.root.add_to_pastry('pastry')
+            ImageButton:
+                on_press: app.root.add_to_item('pastry')
                 Image:
                     source: 'assets/buttons/PASTRY.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size 
-                pos: self.pos
-                on_press: app.root.add_to_total('chips')
-                on_press: app.root.add_to_chips('chips')
+            ImageButton:
+                on_press: app.root.add_to_item('chips')
                 Image:
                     source: 'assets/buttons/CHIPS.png'
                     x: self.parent.x
                     y: self.parent.y
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('el sabroso')
-                on_press: app.root.add_to_el_sabroso('el sabroso')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('el sabroso')
                 Image:
                     source: 'assets/buttons/EL SABROSO.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('island snacks')
-                on_press: app.root.add_to_island_snacks('island snacks')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('island snacks')
                 Image:
                     source: 'assets/buttons/ISLAND SNACKS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('combos')
-                on_press: app.root.add_to_combos('combos')
+            ImageButton:
+                on_press: app.root.add_to_item('combos')
                 Image:
                     source: 'assets/buttons/COMBOS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('soups')
-                on_press: app.root.add_to_soups('soups')
+            ImageButton:
+                on_press: app.root.add_to_item('soups')
                 Image:
                     source: 'assets/buttons/SOUPS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('sun flower seeds')
-                on_press: app.root.add_to_sun_flower_seeds('sun flower seeds')
+            ImageButton:
+                on_press: app.root.add_to_item('sun flower seeds')
                 Image:
                     source: 'assets/buttons/SF SEEDS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('pop tarts')
-                on_press: app.root.add_to_pop_tarts('pop tarts')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('pop tarts')
                 Image:
                     source: 'assets/buttons/POP TARTS.png'
                     x: self.parent.x
                     y: self.parent.y
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('takis')
-                on_press: app.root.add_to_takis('takis')
+            ImageButton:
+                on_press: app.root.add_to_item('takis')
                 Image:
                     source: 'assets/buttons/TAKIS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('fruit snacks')
-                on_press: app.root.add_to_fruit_snacks('fruit snacks')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('fruit snacks')
                 Image:
                     source: 'assets/buttons/FRUIT SNACKS.png'
                     x: self.parent.x
                     y: self.parent.y
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('fruit cups')
-                on_press: app.root.add_to_fruit_cups('fruit cups')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('fruit cups')
                 Image:
                     source: 'assets/buttons/FRUIT_CUP.png'
                     x: self.parent.x
                     y: self.parent.y
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('gum')
-                on_press: app.root.add_to_gum('gum')
+            ImageButton:
+                on_press: app.root.add_to_item('gum')
                 Image:
                     source: 'assets/buttons/GUM.png'
                     x: self.parent.x
                     y: self.parent.y
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('gatorade bar')
-                on_press: app.root.add_to_gatorade_bar('gatorade bar')
+            ImageButton:
+            
+                on_press: app.root.add_to_item('gatorade bar')
                 Image:
                     source: 'assets/buttons/GATORADE BAR.png'
                     x: self.parent.x
@@ -197,10 +144,8 @@
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
+
+            ImageButton:
                 on_press: app.root.receipt_screen_selected()
                 Image:
                     source: 'assets/buttons/receipt_button.png'

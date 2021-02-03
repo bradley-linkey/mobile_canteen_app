@@ -15,10 +15,7 @@
             size_hint_y: 1
             rows: 7
             cols: 3
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
+            ImageButton:
                 on_press: app.root.DIR_screen_selected()
                 Image:
                     source: 'assets/buttons/DIR.png'
@@ -36,56 +33,36 @@
             
             Widget:
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('ciggs')
-                on_press: app.root.add_to_ciggs('ciggs')
+            ImageButton:
+                on_press: app.root.add_to_item('ciggs')
                 Image:
                     source: 'assets/buttons/CIGGS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('grizzly')
-                on_press: app.root.add_to_grizzly('grizzly')
+            ImageButton:
+                on_press: app.root.add_to_item('grizzly')
                 Image:
                     source: 'assets/buttons/GRIZZLY.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size 
-                pos: self.pos
-                on_press: app.root.add_to_total('lighters')
-                on_press: app.root.add_to_lighters('lighters')
+            ImageButton:
+                on_press: app.root.add_to_item('lighters')
                 Image:
                     source: 'assets/buttons/LIGHTER.png'
                     x: self.parent.x
                     y: self.parent.y
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('stokers')
-                on_press: app.root.add_to_stokers('stokers')
+            ImageButton:
+                on_press: app.root.add_to_item('stokers')
                 Image:
                     source: 'assets/buttons/STOKERS.png'
                     x: self.parent.x
                     y: self.parent.y
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                on_press: app.root.add_to_total('chapstick')
-                on_press: app.root.add_to_chapstick('chapstick')
+            ImageButton:
+                on_press: app.root.add_to_item('chapstick')
                 Image:
                     source: 'assets/buttons/CHAPSTICK.png'
                     x: self.parent.x
@@ -102,10 +79,7 @@
                 size: self.size
                 font_size: '30px'
             
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
+            ImageButton:
                 on_press: app.root.receipt_screen_selected()
                 Image:
                     source: 'assets/buttons/receipt_button.png'

@@ -1,9 +1,12 @@
 #:kivy 1.10.0
+#:import mtx kivy.metrics
+
 
 <Start_Count_Screen>:
     name: '_start_count_screen_'
 
     BoxLayout:
+        orientation: 'vertical'
         canvas.before:
             Color:
                 rgba: rgba('#72B7CD')
@@ -11,137 +14,104 @@
                 pos: self.pos
                 size: self.size
 
-        GridLayout:
+
+        Widget:
+            size_hint_y: .05
+
+        BoxLayout:
             size_hint_x: 1
-            size_hint_y: 1
-            rows: 7
-            cols: 3
+            size_hint_y: .1
+
+            ProductDropdown:
+                id: product_dropdown
+                size_hint_y: 0.75
+                on_parent: self.set_button_text('Select Product')
+
+            TextInput:
+                id: product_count
+                size_hint_x: 0.3
+                padding: 20
+                text_hint: 'count'
+                font_size: '12dp'
+
+        Widget:
+            size_hint_y: .05
+
+        # BoxLayout:
+        #     size_hint_x: 1
+        #     size_hint_y: .5
+
+        ProductListView:
+            id: product_listview
+            size_hint_x: 1
+            size_hint_y: .5
+            canvas.before:
+                Color:
+                    rgba: rgba('#C4C4C4')
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: rgba('#0E1574')
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
+
+        Widget:
+            size_hint_y: .1
             
-            Widget: 
-
-            Label:
-                id: how_many
-                text: 'How many  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
-
-            Widget:
-
-            Label:
-                id: start_count_total
-                text: '  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
-
-            Widget:
-
-            Widget:
-
-            Widget:
-
-            Label:
-                id: do_you_have
-                text: 'do you have?  '
-                pos: self.pos
-                size: self.size
-                font_size: '30px'
-
-            Widget:
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: .1
             
             Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/1.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                text: 'Add'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.add_to_listview()
 
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/2.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/3.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/4.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/5.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/6.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/7.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/8.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/9.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                canvas.before:
+                    Color:
+                        rgba: rgba('#81d47b')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
             
-            Widget:
-
             Button:
-                background_color: 1, 1, 1, .01
-                size: self.size
-                pos: self.pos
-                Image:
-                    source: 'assets/buttons/0.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                text: 'Clear'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.clear_screen()
+
+                canvas.before:
+                    Color:
+                        rgba: rgba('#bababa')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
             
+            Button:
+                text: 'Submit'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.submit_to_csv()
+
+                canvas.before:
+                    Color:
+                        rgba: rgba('#3458eb')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+        
+        BoxLayout:
+            size_hint_y: .1
+
             Button:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -150,4 +120,44 @@
                 Image:
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
-                    y: self.parent.y  
+                    y: self.parent.y 
+
+
+<ProductDropdown>:
+    orientation: 'vertical'
+    padding: 20
+    dropdown: dropdown.__self__
+
+    Button:
+        id: btn
+        on_parent: dropdown.dismiss()
+        on_release: dropdown.open(self)
+        size_hint_y: None
+        height: mtx.sp(40)
+
+    DropDown:
+        id: dropdown
+        on_select: root.select_program(args[1])
+
+
+<Item>:
+    id: lineitem
+    color: (0,0,0,1)
+
+    canvas.before:
+        Color:
+            rgba: (0, 0, 1, .4)
+        Rectangle:
+            pos: self.pos
+            size: [self.size[0], 1]
+
+<ProductListView>:
+    viewclass: 'Item'
+    RecycleBoxLayout:
+        default_size: None, dp(28)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
