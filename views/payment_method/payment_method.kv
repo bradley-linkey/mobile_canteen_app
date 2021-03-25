@@ -1,0 +1,106 @@
+#:kivy 1.10.0
+
+<Payment_Method>:
+    name: '_payment_method_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 3
+            cols: 4
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_visa()
+                Image:
+                    source: 'assets/buttons/Visa&Debt.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: visa_total
+                text: 'Visa \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_mastercard()
+                Image:
+                    source: 'assets/buttons/MasterCard.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: MasterCard_total
+                text: 'MasterCard \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_cash()
+                Image:
+                    source: 'assets/buttons/Cash.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: cash_total
+                text: 'Cash \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_americanexpress()
+                Image:
+                    source: 'assets/buttons/AmericanExpress.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: AmericanExpress_total
+                text: ' American Express \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_discover()
+                Image:
+                    source: 'assets/buttons/Discover.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: Discover_total
+                text: 'Discover \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'

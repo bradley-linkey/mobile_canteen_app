@@ -39,15 +39,15 @@
 
             ImageButton:
                 id: soups_count
-                on_press: app.root.minus_to_item('soup')
+                on_press: app.root.minus_to_item('soups')
 
             ImageButton:
                 id: island_snacks_count
-                on_press: app.root.minus_item('island snacks')
+                on_press: app.root.minus_to_item('island snacks')
 
             ImageButton:
-                id: sun_flower_seeds_count
-                on_press: app.root.minus_to_item('sun flower seeds')
+                id: SF_seeds_count
+                on_press: app.root.minus_to_item('SF seeds')
 
             ImageButton:
                 id: pop_tarts_count
@@ -63,15 +63,15 @@
             
             ImageButton:
                 id: fruit_cups_count
-                on_press: app.root.minus_to_item('fruit cup')
+                on_press: app.root.minus_to_item('fruit cups')
 
             ImageButton:
                 id: gum_count
                 on_press: app.root.minus_to_item('gum')
 
             ImageButton:
-                id: gatorade_bar_count
-                on_press: app.root.minus_to_item('gatorade bar')
+                id: g_bar_count
+                on_press: app.root.minus_to_item('g bar')
 
             ImageButton:
                 id: nesquick_count
@@ -90,8 +90,8 @@
                 on_press: app.root.minus_to_item('monster')
 
             ImageButton:
-                id: brisk_count
-                on_press: app.root.minus_to_item('brisk')
+                id: mnt_dew_count
+                on_press: app.root.minus_to_item('mnt dew')
 
             ImageButton:
                 id: water_count
@@ -114,10 +114,6 @@
                 on_press: app.root.minus_to_item('langers')
 
             ImageButton:
-                id: body_armor_count
-                on_press: app.root.minus_to_item('body armor')
-
-            ImageButton:
                 id: star_bucks_count
                 on_press: app.root.minus_to_item('star bucks')
 
@@ -130,28 +126,28 @@
                 on_press: app.root.minus_to_item('bang')
 
             ImageButton:
-                id: electro_life_count
-                on_press: app.root.minus_to_item('electro life')
+                id: electrolit_count
+                on_press: app.root.minus_to_item('electrolit')
 
             ImageButton:
                 id: coconut_water_count
-                on_press: app.root.minus_to_item('coconut_water')
+                on_press: app.root.minus_to_item('coconut water')
 
             ImageButton:
-                id: five_hour_count
-                on_press: app.root.minus_to_item('five_hour')
+                id: 5_hour_count
+                on_press: app.root.minus_to_item('5 hour')
             
             ImageButton:
                 id: breakfast_count
                 on_press: app.root.minus_to_item('breakfast')
 
             ImageButton:
-                id: small_burrito_count
-                on_press: app.root.minus_to_item('small burrito')
+                id: burrito_count
+                on_press: app.root.minus_to_item('burrito')
 
             ImageButton:
-                id: large_burrito_count
-                on_press: app.root.minus_to_item('large_burrito')
+                id: xl_burrito_count
+                on_press: app.root.minus_to_item('xl burrito')
 
             ImageButton:
                 id: calzone_count
@@ -159,7 +155,7 @@
 
             ImageButton:
                 id: big_chicken_count
-                on_press: app.root.minus_to_item('big_chicken')
+                on_press: app.root.minus_to_item('big chicken')
 
             ImageButton:
                 id: pbj_count
@@ -170,8 +166,8 @@
                 on_press: app.root.minus_to_item('brats')
 
             ImageButton:
-                id: fresh_and_ready_count
-                on_press: app.root.minus_to_item('fresh and ready')
+                id: F_&_R_count
+                on_press: app.root.minus_to_item('F & R')
 
             ImageButton:
                 id: tuna_count
@@ -227,7 +223,7 @@
                 background_color: 1, 1, 1, .01
                 size: self.size
                 pos: self.pos
-                on_press: app.root.reset_running_total()
+                on_press: app.root.comfirm_payment()
                 Image:
                     source: 'assets/buttons/COMFIRMTRANACTION.png'
                     x: self.parent.x

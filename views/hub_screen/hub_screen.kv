@@ -1,0 +1,136 @@
+#:kivy 1.10.0
+#:import mtx kivy.metrics
+
+<HubScreen>:
+    name: '_hub_screen_'
+    BoxLayout:
+        orientation: 'vertical'
+
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Widget:
+            size_hint_y: .05
+
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: .1
+        
+            Button:
+                text: 'Add'
+                size_hint_y: 0.75
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.add_to_call_list()
+
+    
+            TextInput:
+                id: building_number
+                size_hint_x: 0.3
+                size_hint_y: 0.75
+                text_hint: 'count'
+                font_size: '12dp'
+
+        Widget:
+            size_hint_y: .05
+        
+        BoxLayout:
+            size_hint_y: .5
+            
+            CallsListView:
+                id: calls_listview
+                size_hint_x: .4
+                size_hint_y: 1
+                canvas.before:
+                    Color:
+                        rgba: rgba('#C4C4C4')
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                    Color:
+                        rgba: rgba('#0E1574')
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            
+            Widget:
+                size_hint_x: .2
+
+
+            AcceptedCallsListView:
+                id: accepted_calls_listview
+                size_hint_x: .4
+                size_hint_y: 1
+                canvas.before:
+                    Color:
+                        rgba: rgba('#C4C4C4')
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                    Color:
+                        rgba: rgba('#0E1574')
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+
+        # .7
+        BoxLayout:
+            size_hint_y: .3
+            
+            Button:
+                size_hint_x: .3
+                size_hint_y: .4
+
+                text: 'Accept'
+                background_active: ''
+                background_normal: ''
+                background_color: [0,0,0,0]
+                font_name: 'Roboto-Bold'
+                on_press: root.add_to_accepted_call_list()
+
+                canvas.before:
+                    Color:
+                        rgba: rgba('#3458eb')
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+
+            ImageButton:
+                
+                size_hint_x: .3
+                size_hint_y: .4
+
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y            
+
+
+<CallsListView>:
+    viewclass: 'Item'
+    RecycleBoxLayout:
+        default_size: None, dp(28)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True
+
+<AcceptedCallsListView>:
+    viewclass: 'Item'
+    RecycleBoxLayout:
+        default_size: None, dp(28)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+        multiselect: True
+        touch_multiselect: True

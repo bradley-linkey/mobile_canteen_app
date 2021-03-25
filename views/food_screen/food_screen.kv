@@ -34,74 +34,86 @@
             Widget:
             
             ImageButton:
-                on_press: app.root.add_to_item('breakfast')
+                on_press: app.root.add_to_item('breakfast', self)
                 Image:
                     source: 'assets/buttons/BREAKFAST.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('small burrito')
-                Image:
-                    source: 'assets/buttons/SMALLBURRITO.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('large burrito')
-                Image:
-                    source: 'assets/buttons/LARGEBURRITO.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            ImageButton:
-                on_press: app.root.add_to_item('calzone')
-                Image:
-                    source: 'assets/buttons/CALZONE.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('big chicken')
-                Image:
-                    source: 'assets/buttons/BIGCHICKEN.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('pbj')
-                Image:
-                    source: 'assets/buttons/PB&J.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('brats')
+                on_press: app.root.add_to_item('brats', self)
                 Image:
                     source: 'assets/buttons/BRATS.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('fresh & ready')
+                on_press: app.root.add_to_item('burrito', self)
+                Image:
+                    source: 'assets/buttons/SMALLBURRITO.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('big chicken', self)
+                Image:
+                    source: 'assets/buttons/BIGCHICKEN.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('xl burrito',self)
+                Image:
+                    source: 'assets/buttons/LARGEBURRITO.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('calzone', self )
+                Image:
+                    source: 'assets/buttons/CALZONE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('pbj', self)
+                Image:
+                    source: 'assets/buttons/PB&J.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('F & R', self)
                 Image:
                     source: 'assets/buttons/FRESH&READY.png'
                     x: self.parent.x
                     y: self.parent.y
-            
+                    size:self.parent.size
+             
             ImageButton:
-                on_press: app.root.add_to_item('tuna')
-                Image:
-                    source: 'assets/buttons/TUNA.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            ImageButton:
-                on_press: app.root.add_to_item('parfait')
+                on_press: app.root.add_to_item('parfait', self)
                 Image:
                     source: 'assets/buttons/PARFAIT.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('tuna',self)
+                Image:
+                    source: 'assets/buttons/TUNA.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+           
             
             Label:
                 id: running_total

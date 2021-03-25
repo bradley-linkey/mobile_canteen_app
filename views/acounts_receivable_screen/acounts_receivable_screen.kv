@@ -1,0 +1,209 @@
+#:kivy 1.10.0
+
+<AcountsReceivableScreen>:
+    name: '_acounts_receivable_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 10
+            cols: 5
+
+            ImageButton:
+                id: acount_candy_count
+
+            
+            ImageButton:
+                id: acount_pastry_count
+ 
+
+            ImageButton:
+                id: acount_chips_count
+
+
+            ImageButton:
+                id: acount_el_sabroso_count
+     
+            
+            ImageButton:
+                id: acount_combos_count
+
+
+            ImageButton:
+                id: acount_soups_count
+
+            ImageButton:
+                id: acount_island_snacks_count
+    
+
+            ImageButton:
+                id: acount_SF_seeds_count
+
+        
+            ImageButton:
+                id: acount_pop_tarts_count
+
+            
+            ImageButton:
+                id: acount_takis_count
+
+            ImageButton:
+                id: acount_fruit_snacks_count
+    
+            
+            ImageButton:
+                id: acount_fruit_cups_count
+    
+
+            ImageButton:
+                id: acount_gum_count
+
+            ImageButton:
+                id: acount_g_bar_count
+
+            ImageButton:
+                id: acount_nesquick_count
+
+
+            ImageButton:
+                id: acount_red_bull_count
+
+            
+            ImageButton:
+                id: acount_gatorade_count
+
+
+            ImageButton:
+                id: acount_monster_count
+
+
+            ImageButton:
+                id: acount_mnt_dew_count
+
+            ImageButton:
+                id: acount_water_count
+
+            ImageButton:
+                id: acount_soda_count
+
+            ImageButton:
+                id: acount_arizona_count
+    
+
+            ImageButton:
+                id: acount_v8_count
+
+            ImageButton:
+                id: acount_langers_count
+    
+
+            ImageButton:
+                id: acount_star_bucks_count
+    
+
+            ImageButton:
+                id: acount_raze_count
+
+
+            ImageButton:
+                id: acount_bang_count
+
+
+            ImageButton:
+                id: acount_electrolit_count
+    
+
+            ImageButton:
+                id: acount_coconut_water_count
+        
+
+            ImageButton:
+                id: acount_5_hour_count
+
+            
+            ImageButton:
+                id: acount_breakfast_count
+   
+
+            ImageButton:
+                id: acount_burrito_count
+ 
+
+            ImageButton:
+                id: acount_xl_burrito_count
+    
+
+            ImageButton:
+                id: acount_calzone_count
+ 
+
+            ImageButton:
+                id: acount_big_chicken_count
+
+            ImageButton:
+                id: acount_pbj_count
+
+            ImageButton:
+                id: acount_brats_count
+
+            ImageButton:
+                id: acount_F_&_R_count
+
+            ImageButton:
+                id: acount_tuna_count
+
+            ImageButton:
+            ImageButton:
+                id: acount_ciggs_count
+
+            ImageButton:
+                id: acount_grizzly_count
+
+            ImageButton:
+                id: acount_stokers_count
+
+            ImageButton:
+                id: acount_lighters_count
+    
+
+            ImageButton:
+                id: acount_chapstick_count
+        
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y              
+                    size: self.parent.size
+
+            Label:
+                id: running_total
+                text: '$ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '30px'
+            
+            Widget:
+
+            ImageButton:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.comp()
+                Image:
+                    source: 'assets/buttons/COMP.png'
+                    x: self.parent.x
+                    y: self.parent.y              
+                    size: self.parent.size

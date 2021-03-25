@@ -20,14 +20,12 @@
                 background_color: 1, 1, 1, .01
                 size: self.size
                 pos: self.pos
-                on_press: app.root.get_data()
-                # on_press: app.root.DIR_screen_selected()
-                # on_release: app.root.trigger_send_email()
+                on_press: app.root.acounts_receivable_screen_selected()
                 Image:
-                    source: 'assets/buttons/ORDER.png'
+                    source: 'assets/buttons/Acounts.png'
                     x: self.parent.x
                     y: self.parent.y
-
+            
             Button:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -48,9 +46,28 @@
                     x: self.parent.x
                     y: self.parent.y
 
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.user_page_screen_selected() 
+                Image:
+                    source: 'assets/buttons/User_Page.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
             Label:
                 id: running_total
                 text: '$ --.-- '
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.hub_screen_selected() 
+                Image:
+                    source: 'assets/buttons/Hub.png'
+                    x: self.parent.x
+                    y: self.parent.y

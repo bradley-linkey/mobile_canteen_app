@@ -37,10 +37,6 @@
         Widget:
             size_hint_y: .05
 
-        # BoxLayout:
-        #     size_hint_x: 1
-        #     size_hint_y: .5
-
         ProductListView:
             id: product_listview
             size_hint_x: 1
@@ -100,7 +96,7 @@
                 background_normal: ''
                 background_color: [0,0,0,0]
                 font_name: 'Roboto-Bold'
-                on_press: root.submit_to_csv()
+                on_press: root.update_start_count_in_store()
 
                 canvas.before:
                     Color:
@@ -121,7 +117,6 @@
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
                     y: self.parent.y 
-
 
 <ProductDropdown>:
     orientation: 'vertical'

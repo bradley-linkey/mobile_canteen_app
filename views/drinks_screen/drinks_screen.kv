@@ -21,6 +21,7 @@
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
                     y: self.parent.y
+                
             Label:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -33,123 +34,133 @@
             Widget:
             
             ImageButton:
-                on_press: app.root.add_to_item('nesquick')
-                Image:
-                    source: 'assets/buttons/NESQUICK.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('gatorade')
-                Image:
-                    source: 'assets/buttons/GATORADE.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('red bull')
-                Image:
-                    source: 'assets/buttons/REDBULL.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            ImageButton:
-                on_press: app.root.add_to_item('monster')
-                Image:
-                    source: 'assets/buttons/MONSTER.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('brisk')
-                Image:
-                    source: 'assets/buttons/BRISK.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('water')
-                Image:
-                    source: 'assets/buttons/WATER.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('soda')
-                Image:
-                    source: 'assets/buttons/SODA.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('arizona')
+                on_press: app.root.add_to_item('arizona', self)
                 Image:
                     source: 'assets/buttons/ARIZONA.png'
+                    y: self.parent.y 
                     x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('v8')
-                Image:
-                    source: 'assets/buttons/V8.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                    size:self.parent.size
 
-            ImageButton:
-                on_press: app.root.add_to_item('langers')
-                Image:
-                    source: 'assets/buttons/LANGERS.png'
-                    x: self.parent.x
-                    y: self.parent.y
             
             ImageButton:
-                on_press: app.root.add_to_item('body armor')
-                Image:
-                    source: 'assets/buttons/BODYARMOR.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('star bucks')
-                Image:
-                    source: 'assets/buttons/STARBUCKS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('raze')
-                Image:
-                    source: 'assets/buttons/RAZE.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('bang')
+                on_press: app.root.add_to_item('bang', self)
                 Image:
                     source: 'assets/buttons/BANG.png'
                     x: self.parent.x
                     y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('electro life')
-                Image:
-                    source: 'assets/buttons/ELECTROLIFE.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                    size:self.parent.size
 
             ImageButton:
-                on_press: app.root.add_to_item('coconut water')
+                on_press: app.root.add_to_item('coconut water', self)
                 Image:
                     source: 'assets/buttons/COCONUTWATER.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('5 hour')
+                on_press: app.root.add_to_item('electrolit',self)
+                Image:
+                    source: 'assets/buttons/ELECTROLIT.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('gatorade',self)
+                Image:
+                    source: 'assets/buttons/GATORADE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('langers',self)
+                Image:
+                    source: 'assets/buttons/LANGERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('monster',self)
+                Image:
+                    source: 'assets/buttons/MONSTER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('mnt dew',self)
+                Image:
+                    source: 'assets/buttons/Mnt_Dew.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('nesquick',self)
+                Image:
+                    source: 'assets/buttons/NESQUICK.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('raze',self)
+                Image:
+                    source: 'assets/buttons/RAZE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('red bull',self)
+                Image:
+                    source: 'assets/buttons/REDBULL.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('soda', self)
+                Image:
+                    source: 'assets/buttons/SODA.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('star bucks',self)
+                Image:
+                    source: 'assets/buttons/STARBUCKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('v8',self)
+                Image:
+                    source: 'assets/buttons/V8.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('water',self)
+                Image:
+                    source: 'assets/buttons/WATER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('5 hour',self)
                 Image:
                     source: 'assets/buttons/5HOUR.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
 
             Widget:
 

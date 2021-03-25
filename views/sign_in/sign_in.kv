@@ -1,0 +1,82 @@
+#:kivy 1.10.0
+
+<Sign_In>:
+    name: '_sign_in_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 7
+            cols: 3
+            
+            Widget:
+            
+            Label:
+                id: welcome1
+                text: 'Welcome To The \n Mobile Canteen '
+                pos: self.pos
+                size: self.size
+                font_size: '40px'
+            
+            Widget:
+            
+            Label:
+                id:Truck1
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/Truck 1.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id:Truck2
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/Truck 1.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id:Truck3
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/Truck 1.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Widget:
+            
+            Label:
+                id: welcome2
+                text: 'How can we help you? '
+                pos: self.pos
+                size: self.size
+                font_size: '20px'            
+            Widget:
+            
+
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.routelogs_screen_selected()
+                Image:
+                    source: 'assets/buttons/ROUTELOGS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+

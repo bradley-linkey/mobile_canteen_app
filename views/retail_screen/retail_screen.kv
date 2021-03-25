@@ -34,39 +34,44 @@
             Widget:
             
             ImageButton:
-                on_press: app.root.add_to_item('ciggs')
-                Image:
-                    source: 'assets/buttons/CIGGS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('grizzly')
-                Image:
-                    source: 'assets/buttons/GRIZZLY.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('lighters')
-                Image:
-                    source: 'assets/buttons/LIGHTER.png'
-                    x: self.parent.x
-                    y: self.parent.y
-
-            ImageButton:
-                on_press: app.root.add_to_item('stokers')
-                Image:
-                    source: 'assets/buttons/STOKERS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('chapstick')
+                on_press: app.root.add_to_item('chapstick', self)
                 Image:
                     source: 'assets/buttons/CHAPSTICK.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('ciggs', self)
+                Image:
+                    source: 'assets/buttons/CIGGS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('grizzly', self)
+                Image:
+                    source: 'assets/buttons/GRIZZLY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('lighters', self)
+                Image:
+                    source: 'assets/buttons/LIGHTER.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('stokers', self)
+                Image:
+                    source: 'assets/buttons/STOKERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
 
             Widget:
 

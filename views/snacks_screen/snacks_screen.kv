@@ -35,107 +35,119 @@
             Widget:
 
             ImageButton:
-                on_press: app.root.add_to_item('candy')
+                on_press: app.root.add_to_item('candy', self)
                 Image:
                     source: 'assets/buttons/CANDY.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('pastry')
-                Image:
-                    source: 'assets/buttons/PASTRY.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('chips')
+                on_press: app.root.add_to_item('chips', self)
                 Image:
                     source: 'assets/buttons/CHIPS.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
 
             ImageButton:
-            
-                on_press: app.root.add_to_item('el sabroso')
-                Image:
-                    source: 'assets/buttons/EL SABROSO.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-            
-                on_press: app.root.add_to_item('island snacks')
-                Image:
-                    source: 'assets/buttons/ISLAND SNACKS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('combos')
+                on_press: app.root.add_to_item('combos', self)
                 Image:
                     source: 'assets/buttons/COMBOS.png'
                     x: self.parent.x
                     y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('soups')
-                Image:
-                    source: 'assets/buttons/SOUPS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-                on_press: app.root.add_to_item('sun flower seeds')
-                Image:
-                    source: 'assets/buttons/SF SEEDS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            
-            ImageButton:
-            
-                on_press: app.root.add_to_item('pop tarts')
-                Image:
-                    source: 'assets/buttons/POP TARTS.png'
-                    x: self.parent.x
-                    y: self.parent.y
+                    size:self.parent.size
 
             ImageButton:
-                on_press: app.root.add_to_item('takis')
+                on_press: app.root.add_to_item('el sabroso', self)
                 Image:
-                    source: 'assets/buttons/TAKIS.png'
+                    source: 'assets/buttons/EL SABROSO.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
             
-            ImageButton:
-            
-                on_press: app.root.add_to_item('fruit snacks')
-                Image:
-                    source: 'assets/buttons/FRUIT SNACKS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-            ImageButton:
-            
-                on_press: app.root.add_to_item('fruit cups')
+            ImageButton
+                on_press: app.root.add_to_item('fruit cups', self)
                 Image:
                     source: 'assets/buttons/FRUIT_CUP.png'
                     x: self.parent.x
                     y: self.parent.y
-
+                    size:self.parent.size
+            
             ImageButton:
-                on_press: app.root.add_to_item('gum')
+                on_press: app.root.add_to_item('fruit snacks', self)
                 Image:
-                    source: 'assets/buttons/GUM.png'
+                    source: 'assets/buttons/FRUIT SNACKS.png'
                     x: self.parent.x
                     y: self.parent.y
-            ImageButton:
+                    size:self.parent.size
+
+            ImageButton:            
+                on_press: app.root.add_to_item('island snacks', self)
+                Image:
+                    source: 'assets/buttons/ISLAND SNACKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
             
-                on_press: app.root.add_to_item('gatorade bar')
+            ImageButton:
+                on_press: app.root.add_to_item('g bar', self)
                 Image:
                     source: 'assets/buttons/GATORADE BAR.png'
                     x: self.parent.x
                     y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('gum', self)
+                Image:
+                    source: 'assets/buttons/GUM.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('pastry' , self)
+                Image:
+                    source: 'assets/buttons/PASTRY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('pop tarts' , self)
+                Image:
+                    source: 'assets/buttons/POP TARTS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
 
+            ImageButton:
+                on_press: app.root.add_to_item('takis', self)
+                Image:
+                    source: 'assets/buttons/TAKIS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('SF seeds', self)
+                Image:
+                    source: 'assets/buttons/SF SEEDS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('soups', self)
+                Image:
+                    source: 'assets/buttons/SOUPS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+
+            Widget:
+            
             Widget:
 
             Label:
