@@ -118,10 +118,6 @@
                 on_press: app.root.minus_to_item('star bucks')
 
             ImageButton:
-                id: raze_count
-                on_press: app.root.minus_to_item('raze')
-
-            ImageButton:
                 id: bang_count
                 on_press: app.root.minus_to_item('bang')
 
@@ -197,6 +193,7 @@
                 id: chapstick_count
                 on_press: app.root.minus_to_item('chapstick')
 
+            Widget:
             
             Button:
                 background_color: 1, 1, 1, .01
@@ -209,16 +206,17 @@
                     y: self.parent.y              
                     size: self.parent.size
 
+            Widget:
+
             Label:
                 id: running_total
                 text: '$ --.-- '
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
-
+            
             Widget:
             
-        
             Button:
                 background_color: 1, 1, 1, .01
                 size: self.size

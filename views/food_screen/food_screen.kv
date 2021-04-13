@@ -22,6 +22,9 @@
                     source: 'assets/buttons/DIR.png'
                     x: self.parent.x
                     y: self.parent.y
+            
+            Widget:
+
             Label:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -30,8 +33,6 @@
                     source: 'assets/buttons/Hot_food_truck.png'
                     x: self.parent.x
                     y: self.parent.y
-            
-            Widget:
             
             ImageButton:
                 on_press: app.root.add_to_item('breakfast', self)

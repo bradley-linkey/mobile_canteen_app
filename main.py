@@ -21,7 +21,13 @@ Builder.load_file("views/start_count_screen/start_count_screen.kv")
 Builder.load_file("views/acounts_receivable_screen/acounts_receivable_screen.kv")
 Builder.load_file("views/hub_screen/hub_screen.kv")
 Builder.load_file("views/payment_method/payment_method.kv")
-
+Builder.load_file("views/choose_item/choose_item.kv")
+Builder.load_file("views/chips_screen/chips_screen.kv")
+Builder.load_file("views/candy_screen/candy_screen.kv")
+Builder.load_file("views/combos_screen/combos_screen.kv")
+Builder.load_file("views/gatorade_bar_screen/gatorade_bar_screen.kv")
+Builder.load_file("views/pastry_screen/pastry_screen.kv")
+Builder.load_file("views/island_snacks_screen/island_snacks_screen.kv")
 
 class MenuScreen(Screen):
     def __init__(self, **kwargs):
@@ -119,7 +125,48 @@ class Payment_Method(Screen):
     def __init__(self, **kwargs):
         super(Payment_Method, self).__init__(**kwargs)
         self.app = App.get_running_app()
-        
+
+
+class Chips_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Chips_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Candy_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Candy_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Combos_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Combos_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Gatorade_Bar_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Gatorade_Bar_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Island_Snacks_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Island_Snacks_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Pastry_Screen(Screen):
+    def __init__(self, **kwargs):
+        super(Pastry_Screen, self).__init__(**kwargs)
+        self.app = App.get_running_app()
+
+
+class Choose_Item(Screen):
+    def __init__(self, **kwargs):
+        super(Choose_Item, self).__init__(**kwargs)
+        self.app = App.get_running_app()
 
 
 class Start_Count_Screen(Screen):
@@ -136,7 +183,6 @@ class Start_Count_Screen(Screen):
         'v8',
         'langers',
         'star bucks',
-        'raze',
         'bang',
         'electrolit',
         'mnt dew',
@@ -266,7 +312,11 @@ class MyScreenManager(ScreenManager):
         self.cash_total = 0 
         self.americanexpress_total = 0 
         self.discover_total = 0 
-
+        self.comp_count = 0
+        self.na_count = 0   
+        self.ranch_SF_total = 0 
+        self.reg_SF_total = 0 
+        
         for product, price in list(PRICES.items()):
             # product_store = [ price, current, total, start, remaining ]
             self.product_store[product] = [price, 0, 0, 0,0]
@@ -300,6 +350,9 @@ class MyScreenManager(ScreenManager):
         self.update_all_screen_totals()
         self.acounts_receivable_total()
         self.update_receipt_item(product_name)
+        
+        #switch screens to the menu
+        self.app.root.switch_screen('_menu_screen_')
         
     def minus_to_item(self, product_name):
         product_name = product_name.replace(" ", "_")
@@ -394,7 +447,7 @@ class MyScreenManager(ScreenManager):
 
     def retail_screen_selected(self):
         self.app.root.switch_screen('_retail_screen_')
-    
+
     def food_screen_selected(self):
         self.app.root.switch_screen('_food_screen_')
 
@@ -436,7 +489,6 @@ class MyScreenManager(ScreenManager):
         self.ids.reciept_screen.ids[f'{product_name}_count'].text = f' {product_name}:\n ' + str(product_count) + ' = '+ str(product_total)
         self.ids.acounts_receivable_screen.ids[f'acount_{product_name}_count'].text = f' {product_name}:\n ' + str(self.product_store[product_name][2]) + ' = '+ str(self.product_store[product_name][2]*self.product_store[product_name][0]) + f'\n{self.product_store[product_name][4]}'
 
-
     def update_reciept_screen_counts(self):
         # update the product store dictionary counts
         key_list = list(self.product_store.keys())
@@ -446,7 +498,31 @@ class MyScreenManager(ScreenManager):
             product_store_key = f"{i}_count"
             self.ids.reciept_screen.ids[product_store_key].text = ''
 
+#############
 
+    def choose_SF_selected(self):
+        self.app.root.switch_screen('_choose_item_')
+
+    def chips_screen_selected(self):
+        self.app.root.switch_screen('_chips_screen_')
+
+    def candy_screen_selected(self):
+        self.app.root.switch_screen('_candy_screen_')
+
+    def combos_screen_selected(self):
+        self.app.root.switch_screen('_combos_screen_')
+
+    def gatorade_bar_screen_selected(self):
+        self.app.root.switch_screen('_gatorade_bar_screen_')
+
+    def pastry_screen_selected(self):
+        self.app.root.switch_screen('_pastry_screen_')
+    
+    def island_snacks_screen_selected(self):
+        self.app.root.switch_screen('_island_snacks_screen_')
+    
+
+###########
 class SwitchingScreenApp(App):
 
     def build(self):

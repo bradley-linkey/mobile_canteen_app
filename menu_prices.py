@@ -24,7 +24,6 @@ PRICES = {
     "v8": 2.25,
     "langers": 2,
     "star_bucks":4.75,
-    "raze" : 3,
     "bang" : 3,
     "electrolit" : 4.75,
     "coconut_water" : 3.5,

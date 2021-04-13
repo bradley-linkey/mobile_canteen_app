@@ -22,6 +22,8 @@
                     x: self.parent.x
                     y: self.parent.y
             
+            Widget:
+            
             Label:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -31,7 +33,6 @@
                     x: self.parent.x
                     y: self.parent.y
             
-            Widget:
             
             ImageButton:
                 on_press: app.root.add_to_item('chapstick', self)
@@ -74,8 +75,6 @@
                     size:self.parent.size
 
             Widget:
-
-            Widget:
             
             Label:
                 id: running_total
@@ -83,6 +82,8 @@
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
+
+            Widget:
             
             ImageButton:
                 on_press: app.root.receipt_screen_selected()

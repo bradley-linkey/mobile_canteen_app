@@ -1,0 +1,172 @@
+#:kivy 1.10.0
+
+<Pastry_Screen>:
+    name: '_pastry_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 6
+            cols: 4
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/Nacho_Cheese.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: Nacho_Cheese_total
+                text: 'Nacho Cheese Sold \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/Cool_Ranch.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: Cool_Ranch_total
+                text: 'Cool Ranch sold \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/Classic.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Label:
+                id: classic_Lays_total
+                text: 'Classic Lays sold \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Widget:
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/BBQ.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: BBQ_Lays_total
+                text: ' BBQ Lays sold \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/Hot_Cheetos.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: Hot_Cheetos_total
+                text: ' Hot Cheetos sold \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('el sabroso', self)
+                Image:
+                    source: 'assets/buttons/EL_SABROSO.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: el_sabroso_total
+                text: ' el sabroso sold \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('takis', self)
+                Image:
+                    source: 'assets/buttons/TAKIS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            Label:
+                id: takis_total
+                text: 'takis sold \n $ --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('chips', self)
+                Image:
+                    source: 'assets/buttons/Not_Listed.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: not_listed_total
+                text: ' Not Listed \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/COMP.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: Chips_comp_total
+                text: 'Comp \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'

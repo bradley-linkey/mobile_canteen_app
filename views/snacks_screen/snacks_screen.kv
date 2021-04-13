@@ -23,6 +23,8 @@
                     x: self.parent.x
                     y: self.parent.y           
             
+            Widget:
+
             Label:
                 background_color: 1, 1, 1, .01
                 size: self.size
@@ -31,11 +33,9 @@
                     source: 'assets/buttons/Snack_truck.png'
                     x: self.parent.x
                     y: self.parent.y 
-            
-            Widget:
 
             ImageButton:
-                on_press: app.root.add_to_item('candy', self)
+                on_press: app.root.candy_screen_selected()
                 Image:
                     source: 'assets/buttons/CANDY.png'
                     x: self.parent.x
@@ -43,7 +43,7 @@
                     size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('chips', self)
+                on_press: app.root.chips_screen_selected()
                 Image:
                     source: 'assets/buttons/CHIPS.png'
                     x: self.parent.x
@@ -51,17 +51,9 @@
                     size:self.parent.size
 
             ImageButton:
-                on_press: app.root.add_to_item('combos', self)
+                on_press: app.root.combos_screen_selected()
                 Image:
                     source: 'assets/buttons/COMBOS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
-
-            ImageButton:
-                on_press: app.root.add_to_item('el sabroso', self)
-                Image:
-                    source: 'assets/buttons/EL SABROSO.png'
                     x: self.parent.x
                     y: self.parent.y
                     size:self.parent.size
@@ -83,7 +75,7 @@
                     size:self.parent.size
 
             ImageButton:            
-                on_press: app.root.add_to_item('island snacks', self)
+                on_press: app.root.island_snacks_screen_selected()
                 Image:
                     source: 'assets/buttons/ISLAND SNACKS.png'
                     x: self.parent.x
@@ -91,7 +83,7 @@
                     size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('g bar', self)
+                on_press: app.root.gatorade_bar_screen_selected()
                 Image:
                     source: 'assets/buttons/GATORADE BAR.png'
                     x: self.parent.x
@@ -107,7 +99,7 @@
                     size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('pastry' , self)
+                on_press: app.root.pastry_screen_selected()
                 Image:
                     source: 'assets/buttons/PASTRY.png'
                     x: self.parent.x
@@ -121,17 +113,9 @@
                     x: self.parent.x
                     y: self.parent.y
                     size:self.parent.size
-
-            ImageButton:
-                on_press: app.root.add_to_item('takis', self)
-                Image:
-                    source: 'assets/buttons/TAKIS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('SF seeds', self)
+                on_press: app.root.choose_SF_selected()
                 Image:
                     source: 'assets/buttons/SF SEEDS.png'
                     x: self.parent.x
@@ -148,14 +132,14 @@
 
             Widget:
             
-            Widget:
-
             Label:
                 id: running_total
                 text: '$ --.-- '
                 pos: self.pos
                 size: self.size
                 font_size: '30px'
+
+            Widget:
 
             ImageButton:
                 on_press: app.root.receipt_screen_selected()
