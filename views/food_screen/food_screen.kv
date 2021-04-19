@@ -13,7 +13,7 @@
         GridLayout:
             size_hint_x: 1
             size_hint_y: 1
-            rows: 7
+            rows: 8
             cols: 3
         
             ImageButton:
@@ -81,6 +81,14 @@
                     x: self.parent.x
                     y: self.parent.y
                     size:self.parent.size
+
+            ImageButton:
+                on_press: app.root.add_to_item('fruit_cups', self)
+                Image:
+                    source: 'assets/buttons/FRUIT_CUP.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
             
             ImageButton:
                 on_press: app.root.add_to_item('pbj', self)
@@ -94,6 +102,14 @@
                 on_press: app.root.add_to_item('F & R', self)
                 Image:
                     source: 'assets/buttons/FRESH&READY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+                    size:self.parent.size
+            
+            ImageButton:
+                on_press: app.root.add_to_item('soups',self)
+                Image:
+                    source: 'assets/buttons/SOUPS.png'
                     x: self.parent.x
                     y: self.parent.y
                     size:self.parent.size

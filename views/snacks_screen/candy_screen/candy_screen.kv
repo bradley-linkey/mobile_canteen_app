@@ -1,0 +1,131 @@
+#:kivy 1.10.0
+
+<Candy_Screen>:
+    name: '_candy_screen_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 6
+            cols: 2
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/SNICKERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/KIT_KAT.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/MILKY_WAY.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/REESE.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/GUSHERS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/SOUR_PATCH.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('gum', self)
+                Image:
+                    source: 'assets/buttons/GUM.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('fruit_snacks', self)
+                Image:
+                    source: 'assets/buttons/FRUIT SNACKS.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('candy', self)
+                Image:
+                    source: 'assets/buttons/Not_Listed.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            ImageButton:
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/COMP.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: Chips_comp_total
+                text: 'Comp \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'

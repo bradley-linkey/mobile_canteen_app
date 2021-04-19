@@ -14,7 +14,7 @@
         GridLayout:
             size_hint_x: 1
             size_hint_y: 1
-            rows: 7
+            rows: 
             cols: 3
             ImageButton:
                 on_press: app.root.DIR_screen_selected()
@@ -58,22 +58,6 @@
                     y: self.parent.y
                     size:self.parent.size
             
-            ImageButton
-                on_press: app.root.add_to_item('fruit cups', self)
-                Image:
-                    source: 'assets/buttons/FRUIT_CUP.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
-            
-            ImageButton:
-                on_press: app.root.add_to_item('fruit snacks', self)
-                Image:
-                    source: 'assets/buttons/FRUIT SNACKS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
-
             ImageButton:            
                 on_press: app.root.island_snacks_screen_selected()
                 Image:
@@ -91,29 +75,14 @@
                     size:self.parent.size
             
             ImageButton:
-                on_press: app.root.add_to_item('gum', self)
-                Image:
-                    source: 'assets/buttons/GUM.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
-            
-            ImageButton:
                 on_press: app.root.pastry_screen_selected()
                 Image:
                     source: 'assets/buttons/PASTRY.png'
                     x: self.parent.x
                     y: self.parent.y
                     size:self.parent.size
-            
-            ImageButton:
-                on_press: app.root.add_to_item('pop tarts' , self)
-                Image:
-                    source: 'assets/buttons/POP TARTS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
-            
+            Widget:
+
             ImageButton:
                 on_press: app.root.choose_SF_selected()
                 Image:
@@ -122,16 +91,10 @@
                     y: self.parent.y
                     size:self.parent.size
 
-            ImageButton:
-                on_press: app.root.add_to_item('soups', self)
-                Image:
-                    source: 'assets/buttons/SOUPS.png'
-                    x: self.parent.x
-                    y: self.parent.y
-                    size:self.parent.size
+            Widget:
 
             Widget:
-            
+
             Label:
                 id: running_total
                 text: '$ --.-- '

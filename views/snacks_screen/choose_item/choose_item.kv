@@ -1,0 +1,70 @@
+#:kivy 1.10.0
+
+<Choose_Item>:
+    name: '_choose_item_'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: rgba('#72B7CD')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            size_hint_x: 1
+            size_hint_y: 1
+            rows: 3
+            cols: 2
+            
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('SF seeds', self)
+                Image:
+                    source: 'assets/buttons/Ranch_SF.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('SF seeds', self)
+                Image:
+                    source: 'assets/buttons/Reg_SF.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                on_press: app.root.add_to_item('SF seeds', self)
+                Image:
+                    source: 'assets/buttons/Not_Listed.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            ImageButton:
+                on_press: app.root.DIR_screen_selected()
+                Image:
+                    source: 'assets/buttons/DIR.png'
+                    x: self.parent.x
+                    y: self.parent.y
+
+            Button:
+                background_color: 1, 1, 1, .01
+                size: self.size
+                pos: self.pos
+                Image:
+                    source: 'assets/buttons/COMP.png'
+                    x: self.parent.x
+                    y: self.parent.y
+            
+            Label:
+                id: Chips_comp_total
+                text: 'Comp \n  --.-- '
+                pos: self.pos
+                size: self.size
+                font_size: '10px'
